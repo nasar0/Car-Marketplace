@@ -1,313 +1,218 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Search, Car, Shield, TrendingUp } from "lucide-react";
+import { Search, Car, Shield, TrendingUp, Ghost, CloudFog } from "lucide-react";
 
 const Home = () => {
   return (
-    <div className="bg-gray-50">
+    <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white py-24 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Los mejores coches para alquilar <br />
-              <span className="text-blue-400">nuevos y de segunda mano</span>
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Encuentra el coche perfecto para alquilar en CarPlace. Miles de
-              opciones verificadas esperándote.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link
-                to="/buscador"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition flex items-center justify-center gap-2"
-              >
+      <section className="relative h-screen flex items-center justify-center px-6 overflow-hidden">
+        {/* Background Image with Dark Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=2574&auto=format&fit=crop"
+            alt="Dark City Street"
+            className="w-full h-full object-cover opacity-40 grayscale contrast-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-blue-900/10 mix-blend-overlay"></div>
+        </div>
+
+        <div className="relative z-10 container mx-auto max-w-5xl text-center space-y-8">
+          <div className="inline-block mb-4 animate-pulse">
+            <span className="px-4 py-1 border border-red-900/50 bg-red-950/30 text-red-500 text-sm tracking-[0.3em] uppercase rounded-full backdrop-blur-sm">
+              Welcome to the Underworld
+            </span>
+          </div>
+
+          <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white mb-6 drop-shadow-2xl">
+            DOMINATE <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-200 to-gray-600 text-glow">
+              THE SHADOWS
+            </span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
+            In a city that never sleeps, you need a machine that survives.
+            <span className="block mt-2 text-gray-500 italic">
+              Find your beast in the fog.
+            </span>
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-10">
+            <Link
+              to="/buscador"
+              className="group relative px-8 py-4 bg-transparent border border-gray-600 text-white font-bold uppercase tracking-widest overflow-hidden transition-all hover:border-blue-500 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+            >
+              <span className="relative z-10 flex items-center gap-3">
                 <Search size={20} />
-                Buscar alquileres
-              </Link>
-              <Link
-                to="/cars"
-                className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-semibold transition"
-              >
-                Ver todos los alquileres
-              </Link>
-            </div>
+                Initiate Search
+              </span>
+              <div className="absolute inset-0 bg-blue-900/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+            </Link>
+
+            <Link
+              to="/cars"
+              className="group relative px-8 py-4 bg-red-900/20 border border-red-900/50 text-red-100 font-bold uppercase tracking-widest overflow-hidden transition-all hover:bg-red-900/40 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]"
+            >
+              <span className="relative z-10">View Inventory</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-white">
+      {/* Features Section - "The Garage" */}
+      <section className="relative py-32 px-6 bg-black z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              ¿Por qué elegirnos?
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">
+              WHY SURVIVE WITH US?
             </h2>
-            <p className="text-gray-600 text-lg">
-              La mejor experiencia en alquiler de vehículos
-            </p>
+            <div className="h-1 w-24 bg-red-900 mx-auto"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200  hover:scale-110 ">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6  transition-transform duration-300 shadow-lg">
-                <Car className="text-white" size={32} />
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                icon: <Car size={40} />,
+                title: "Armored Selection",
+                desc: "Vehicles verified for durability and performance in the harshest conditions.",
+                color: "text-blue-500",
+                border: "group-hover:border-blue-500/50",
+              },
+              {
+                icon: <Shield size={40} />,
+                title: "Ironclad Guarantee",
+                desc: "150-point inspection. If it breaks, we fix it. No questions asked.",
+                color: "text-green-500",
+                border: "group-hover:border-green-500/50",
+              },
+              {
+                icon: <Ghost size={40} />,
+                title: "Phantom Financing",
+                desc: "Invisible approval process. Get funded in 24 hours with 0% stress.",
+                color: "text-purple-500",
+                border: "group-hover:border-purple-500/50",
+              },
+            ].map((feature, idx) => (
+              <div
+                key={idx}
+                className={`group p-8 bg-gray-900/40 border border-gray-800 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 ${feature.border}`}
+              >
+                <div
+                  className={`mb-6 ${feature.color} opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-transform duration-500`}
+                >
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-200 group-hover:text-white transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">
+                  {feature.desc}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                +5.000 vehículos
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                La mayor selección de coches para alquilar, todos verificados y
-                listos para conducir.
-              </p>
-            </div>
-
-            <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-green-200   hover:scale-110">
-              <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Shield className="text-white" size={32} />
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                100% Garantizado
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Inspección completa de 150 puntos y seguro incluido en todos
-                nuestros vehículos de alquiler.
-              </p>
-            </div>
-
-            <div className="group bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 hover:scale-110">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <TrendingUp className="text-white" size={32} />
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                Tarifas flexibles
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Alquiler por días, semanas o meses. Descuentos especiales para
-                alquileres de larga duración.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Coches Nuevos Section - Mejorado */}
-      <section className="py-20 px-6 bg-white">
+      {/* Featured Cars - "New Arrivals" */}
+      <section className="relative py-32 px-6 bg-gradient-to-b from-black to-gray-900 z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                Coches nuevos para alquilar
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                FRESH FROM THE FACTORY
               </h2>
-              <p className="text-gray-600 text-lg max-w-xl">
-                Alquila vehículos nuevos con garantía oficial del fabricante
+              <p className="text-gray-500 text-lg max-w-xl">
+                Untouched machines ready for the streets.
               </p>
             </div>
             <Link
               to="/cars"
-              className="hidden md:inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
+              className="text-red-500 hover:text-red-400 font-bold uppercase tracking-widest transition-colors flex items-center gap-2"
             >
-              Ver todos <span>→</span>
+              See All Models <span>→</span>
             </Link>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "SUV Premium", price: "89", badge: "Más alquilado" },
-              { name: "Deportivo", price: "129", badge: "Nuevo" },
-              { name: "Familiar", price: "69", badge: "Oferta" },
+              {
+                name: "Nightcrawler SUV",
+                price: "45,900",
+                badge: "BEST SELLER",
+              },
+              { name: "Shadow Sport", price: "38,500", badge: "NEW ARRIVAL" },
+              { name: "Specter Estate", price: "32,900", badge: "LIMITED" },
             ].map((car, index) => (
               <Link
                 key={index}
                 to="/cars"
-                className="group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="group relative block bg-gray-900 border border-gray-800 overflow-hidden hover:border-gray-600 transition-all duration-500"
               >
-                {/* Badge */}
-                <div className="absolute top-4 right-4 z-10 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                <div className="absolute top-4 right-4 z-20 bg-red-900/80 text-white text-xs font-bold px-3 py-1 uppercase tracking-wider backdrop-blur-md">
                   {car.badge}
                 </div>
 
-                {/* Image placeholder con gradiente animado */}
-                <div className="relative h-56 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  <Car
-                    className="text-white relative z-10 group-hover:scale-110 transition-transform duration-500"
-                    size={80}
-                  />
+                <div className="relative h-64 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10"></div>
+                  <div className="w-full h-full bg-gray-800 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                    <Car
+                      size={80}
+                      className="text-gray-600 group-hover:text-gray-400 transition-colors"
+                    />
+                  </div>
+                  {/* Glitch effect overlay on hover could go here */}
                 </div>
 
-                {/* Content */}
-                <div className="p-6 bg-white">
-                  <h3 className="font-bold text-2xl mb-2 text-gray-900">
+                <div className="p-8 relative z-20 -mt-12">
+                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-red-500 transition-colors">
                     {car.name}
                   </h3>
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-3xl font-bold text-blue-600">
-                      {car.price}€
+                  <div className="flex items-baseline gap-3 mb-6">
+                    <span className="text-3xl font-light text-gray-300">
+                      €{car.price}
                     </span>
-                    <span className="text-gray-500 text-sm">por día</span>
                   </div>
-                  <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
-                    <span>Ver detalles</span>
-                    <span className="group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
+                  <div className="w-full py-3 border border-gray-700 text-center text-gray-400 text-sm uppercase tracking-widest group-hover:bg-gray-800 group-hover:text-white transition-all">
+                    View Details
                   </div>
                 </div>
               </Link>
             ))}
           </div>
-
-          <div className="text-center mt-10 md:hidden">
-            <Link
-              to="/cars"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold transition shadow-lg hover:shadow-xl"
-            >
-              Ver todos los coches nuevos
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Coches Segunda Mano Section - Mejorado */}
-      <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-gray-100">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
-                Coches de segunda mano para alquilar
-              </h2>
-              <p className="text-gray-600 text-lg max-w-xl">
-                Vehículos certificados para alquiler con la mejor relación
-                calidad-precio
-              </p>
-            </div>
-            <Link
-              to="/cars"
-              className="hidden md:inline-flex items-center gap-2 text-gray-900 font-semibold hover:gap-3 transition-all"
-            >
-              Ver todos <span>→</span>
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sedán 2021",
-                price: "49",
-                km: "45.000 km",
-                year: "2021",
-              },
-              {
-                name: "Compacto 2022",
-                price: "39",
-                km: "28.000 km",
-                year: "2022",
-              },
-              {
-                name: "Monovolumen 2020",
-                price: "59",
-                km: "52.000 km",
-                year: "2020",
-              },
-            ].map((car, index) => (
-              <Link
-                key={index}
-                to="/cars"
-                className="group relative bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              >
-                {/* Certified badge */}
-                <div className="absolute top-4 left-4 z-10 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
-                  <Shield size={14} />
-                  Certificado
-                </div>
-
-                {/* Image placeholder */}
-                <div className="relative h-56 bg-gradient-to-br from-gray-600 via-gray-700 to-gray-800 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  <Car
-                    className="text-white relative z-10 group-hover:scale-110 transition-transform duration-500"
-                    size={80}
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="font-bold text-2xl mb-3 text-gray-900">
-                    {car.name}
-                  </h3>
-
-                  {/* Info badges */}
-                  <div className="flex gap-2 mb-4">
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">
-                      {car.year}
-                    </span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">
-                      {car.km}
-                    </span>
-                  </div>
-
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-3xl font-bold text-gray-900">
-                      {car.price}€
-                    </span>
-                    <span className="text-gray-500 text-sm">por día</span>
-                  </div>
-
-                  <div className="flex items-center text-gray-900 font-semibold group-hover:gap-2 transition-all">
-                    <span>Ver detalles</span>
-                    <span className="group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-10 md:hidden">
-            <Link
-              to="/cars"
-              className="inline-block bg-gray-900 hover:bg-gray-800 text-white px-10 py-4 rounded-xl font-semibold transition shadow-lg hover:shadow-xl"
-            >
-              Ver todos los coches de ocasión
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section - Mejorado */}
-      <section className="relative py-24 px-6 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-20"></div>
+      {/* CTA Section */}
+      <section className="relative py-32 px-6 bg-black overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/20 rounded-full blur-[100px]"></div>
 
         <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            ¿Listo para alquilar tu coche ideal?
+          <h2 className="text-5xl md:text-7xl font-black mb-8 text-white tracking-tighter">
+            ARE YOU READY?
           </h2>
-          <p className="text-xl md:text-2xl mb-10 text-blue-100 max-w-2xl mx-auto leading-relaxed">
-            Más de 10.000 clientes satisfechos ya encontraron su vehículo
-            perfecto para alquilar con nosotros
+          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+            The city is waiting. Your ride is here. Don't let the fog consume
+            you before you make your move.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/buscador"
-              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition shadow-2xl hover:shadow-3xl hover:scale-105"
-            >
-              <Search size={24} />
-              Comenzar búsqueda
-            </Link>
-            <Link
-              to="/cars"
-              className="inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-xl font-bold text-lg transition border-2 border-white/20"
-            >
-              Ver catálogo completo
-            </Link>
-          </div>
+
+          <Link
+            to="/buscador"
+            className="inline-flex items-center justify-center gap-3 bg-red-700 hover:bg-red-600 text-white px-12 py-6 text-lg font-bold uppercase tracking-widest transition-all hover:shadow-[0_0_30px_rgba(185,28,28,0.4)] clip-path-polygon"
+            style={{
+              clipPath:
+                "polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%)",
+            }}
+          >
+            <Search size={24} />
+            Start Your Hunt
+          </Link>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
