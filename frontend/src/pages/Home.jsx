@@ -10,12 +10,12 @@ const Home = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Los mejores coches <br />
+              Los mejores coches para alquilar <br />
               <span className="text-blue-400">nuevos y de segunda mano</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Encuentra el coche de tus sueños en CarPlace. Miles de opciones
-              verificadas esperándote.
+              Encuentra el coche perfecto para alquilar en CarPlace. Miles de
+              opciones verificadas esperándote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link
@@ -23,13 +23,13 @@ const Home = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition flex items-center justify-center gap-2"
               >
                 <Search size={20} />
-                Buscar coches
+                Buscar alquileres
               </Link>
               <Link
                 to="/cars"
                 className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-semibold transition"
               >
-                Ver todos los coches
+                Ver todos los alquileres
               </Link>
             </div>
           </div>
@@ -44,7 +44,7 @@ const Home = () => {
               ¿Por qué elegirnos?
             </h2>
             <p className="text-gray-600 text-lg">
-              La mejor experiencia en compra de vehículos
+              La mejor experiencia en alquiler de vehículos
             </p>
           </div>
 
@@ -57,8 +57,8 @@ const Home = () => {
                 +5.000 vehículos
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                La mayor selección de coches nuevos y de ocasión, todos
-                verificados y listos para conducir.
+                La mayor selección de coches para alquilar, todos verificados y
+                listos para conducir.
               </p>
             </div>
 
@@ -70,8 +70,8 @@ const Home = () => {
                 100% Garantizado
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Inspección completa de 150 puntos y garantía extendida en todos
-                nuestros vehículos.
+                Inspección completa de 150 puntos y seguro incluido en todos
+                nuestros vehículos de alquiler.
               </p>
             </div>
 
@@ -80,11 +80,11 @@ const Home = () => {
                 <TrendingUp className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                Financiación flexible
+                Tarifas flexibles
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Planes de financiación personalizados desde 0% TAE. Aprobación
-                en 24 horas.
+                Alquiler por días, semanas o meses. Descuentos especiales para
+                alquileres de larga duración.
               </p>
             </div>
           </div>
@@ -97,10 +97,10 @@ const Home = () => {
           <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                Coches nuevos
+                Coches nuevos para alquilar
               </h2>
               <p className="text-gray-600 text-lg max-w-xl">
-                Estrena tu próximo vehículo con garantía oficial del fabricante
+                Alquila vehículos nuevos con garantía oficial del fabricante
               </p>
             </div>
             <Link
@@ -113,9 +113,9 @@ const Home = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "SUV Premium", price: "45.900", badge: "Más vendido" },
-              { name: "Deportivo", price: "38.500", badge: "Nuevo" },
-              { name: "Familiar", price: "32.900", badge: "Oferta" },
+              { name: "SUV Premium", price: "89", badge: "Más alquilado" },
+              { name: "Deportivo", price: "129", badge: "Nuevo" },
+              { name: "Familiar", price: "69", badge: "Oferta" },
             ].map((car, index) => (
               <Link
                 key={index}
@@ -145,9 +145,7 @@ const Home = () => {
                     <span className="text-3xl font-bold text-blue-600">
                       {car.price}€
                     </span>
-                    <span className="text-gray-500 text-sm">
-                      o desde 299€/mes
-                    </span>
+                    <span className="text-gray-500 text-sm">por día</span>
                   </div>
                   <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
                     <span>Ver detalles</span>
@@ -177,10 +175,11 @@ const Home = () => {
           <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
-                Coches de ocasión
+                Coches de segunda mano para alquilar
               </h2>
               <p className="text-gray-600 text-lg max-w-xl">
-                Vehículos certificados con la mejor relación calidad-precio
+                Vehículos certificados para alquiler con la mejor relación
+                calidad-precio
               </p>
             </div>
             <Link
@@ -195,19 +194,19 @@ const Home = () => {
             {[
               {
                 name: "Sedán 2021",
-                price: "18.900",
+                price: "49",
                 km: "45.000 km",
                 year: "2021",
               },
               {
                 name: "Compacto 2022",
-                price: "15.500",
+                price: "39",
                 km: "28.000 km",
                 year: "2022",
               },
               {
                 name: "Monovolumen 2020",
-                price: "22.900",
+                price: "59",
                 km: "52.000 km",
                 year: "2020",
               },
@@ -252,9 +251,7 @@ const Home = () => {
                     <span className="text-3xl font-bold text-gray-900">
                       {car.price}€
                     </span>
-                    <span className="text-gray-500 text-sm">
-                      o desde 189€/mes
-                    </span>
+                    <span className="text-gray-500 text-sm">por día</span>
                   </div>
 
                   <div className="flex items-center text-gray-900 font-semibold group-hover:gap-2 transition-all">
@@ -287,11 +284,11 @@ const Home = () => {
 
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            ¿Listo para encontrar tu coche ideal?
+            ¿Listo para alquilar tu coche ideal?
           </h2>
           <p className="text-xl md:text-2xl mb-10 text-blue-100 max-w-2xl mx-auto leading-relaxed">
             Más de 10.000 clientes satisfechos ya encontraron su vehículo
-            perfecto con nosotros
+            perfecto para alquilar con nosotros
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

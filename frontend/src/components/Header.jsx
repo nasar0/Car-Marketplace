@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Heart, Search, User } from "lucide-react";
+import { Heart, Search, User, MessageCircleMore } from "lucide-react";
 
 const Header = () => {
   return (
@@ -9,14 +9,17 @@ const Header = () => {
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold tracking-tight text-white">
-            Wallapop<span className="text-blue-600">Cars</span>
+            Car<span className="text-blue-600">Place</span>
           </Link>
 
           {/* Links */}
           <div className="hidden md:flex items-center space-x-6 font-medium text-white">
-            <Link to="/" className="hover:text-blue-600 transition">Home</Link>
-            <Link to="/chat" className="hover:text-blue-600 transition">Chat</Link>
-            <Link to="/cars" className="hover:text-blue-600 transition">Cars</Link>
+            <Link to="/" className="hover:text-blue-600 transition">
+              Home
+            </Link>
+            <Link to="/cars" className="hover:text-blue-600 transition">
+              Coches
+            </Link>
           </div>
 
           {/* Icons */}
@@ -24,7 +27,7 @@ const Header = () => {
             <Link to="/buscador" className=" p-2 rounded-full transition ">
               <Search className="text-white hover:text-blue-600" size={20} />
             </Link>
- 
+
             <Link to="/favorites" className=" p-2 rounded-full transition ">
               <Heart className="text-white hover:text-blue-600" size={20} />
             </Link>
@@ -35,6 +38,9 @@ const Header = () => {
           </div>
         </nav>
       </header>
+        <Link to="/chat" className="bg-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 p-2 rounded-full fixed z-50 bottom-10 right-10">
+              <MessageCircleMore className="text-black hover:text-white transition-all duration-300 " size={20}/>
+          </Link>
     </div>
   );
 };
